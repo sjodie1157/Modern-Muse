@@ -74,7 +74,7 @@ main :is(.sec-2) {
     font-weight: 700;
 }
 
-main {
+#main-landing {
     background: linear-gradient(180deg, #102C57 15.42%, #DAC0A3 48.75%);
 }
 
@@ -143,3 +143,47 @@ section .animate {
     transform: translatey(-100%);
     color: transparent;
 }
+
+/* about */
+
+img[alt="aboutImg1"]{
+    border-radius: 2pc;
+    margin: 2rem 0;
+    border: .2rem solid #102C57;
+    width: 300px;
+}
+
+img[alt="team"]{
+    width: 200px;
+    border-radius: 100pc;
+    border: .2rem solid #102C57;
+}
+
+#team h4{
+    display: flex;
+    justify-content: center;
+}
+
+#team div {
+    display: flex;
+    width: fit-content;
+    flex-flow: column;
+}
+
+#main-about :is(h1, h4) {
+    color: #102C57;
+    margin: 2rem 0;
+}
+
+#main-about h1 {
+    font-size: 70px;
+}
+
+#main-about :is(p,h4) {
+    font-size: 30px;
+}
+
+#main-about {
+    background: #DAC0A3;
+}
+
