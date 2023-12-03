@@ -1,0 +1,75 @@
+@media screen and (300px<=width<720px) {
+
+    /* navbar */
+
+    #navbar a {
+        font-size: 28px;
+    }
+
+    /* main */
+
+    .sec-1 h1 {
+        font-size: 28px;
+        font-weight: 700;
+    }
+
+    .sec-1 p {
+        color: #FFF;
+        font-size: 16px;
+        font-weight: 300;
+        width: 75%;
+    }
+
+    .sec-2 h1 {
+        display: flex;
+        justify-content: start;
+        color: white;
+        font-size: 28px;
+    }
+
+    main :is(.sec-1) {
+        padding: 3rem 0 2rem 0;
+    }
+    
+    main :is(.sec-2) {
+        padding: 3rem 0 1rem 0;
+    }
+
+    .sec-1 h1 {
+        display: flex;
+        justify-content: start;
+    }
+
+    .box1 div p:nth-child(1) {
+        font-size: 10px;
+    }
+
+    .box1 div p{
+        font-size: 10px;
+    }
+
+    /* card */
+
+    img[alt="card"]{
+        width: 100px;
+    }
+
+    .card {
+        margin: 0 .2rem 1rem 0;
+        width: fit-content;
+    }
+
+    /* about page */
+
+    img[alt="aboutImg1"]{
+        width: 200px;
+    }
+
+    #main-about :is(p,h4) {
+        font-size: 20px;
+    }
+
+    #main-about h1 {
+        font-size: 40px;
+    }
+}
