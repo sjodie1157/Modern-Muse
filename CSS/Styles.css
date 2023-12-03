@@ -42,8 +42,30 @@ img[alt="logo"] {
 
 /* main */
 
+main :is(.sec-1, .sec-2) {
+    padding: 3rem 0 21rem 0;
+}
+
+.sec-1 h1 {
+    color: #DAC0A3;
+    font-size: 75px;
+    font-weight: 700;
+}
+
+.sec-1 p {
+    color: #FFF;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.sec-2 h1 {
+    color: #102C57;
+    font-size: 75px;
+    font-weight: 700;
+}
+
 main {
-    height: 100vh;
+    background: linear-gradient(180deg, #102C57 15.42%, #DAC0A3 48.75%);
 }
 
 /* footer */
