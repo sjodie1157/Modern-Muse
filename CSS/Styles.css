@@ -42,8 +42,12 @@ img[alt="logo"] {
 
 /* main */
 
-main :is(.sec-1, .sec-2) {
+main :is(.sec-1) {
     padding: 3rem 0 21rem 0;
+}
+
+main :is(.sec-2) {
+    padding: 3rem 0 5rem 0;
 }
 
 .sec-1 h1 {
@@ -66,6 +70,21 @@ main :is(.sec-1, .sec-2) {
 
 main {
     background: linear-gradient(180deg, #102C57 15.42%, #DAC0A3 48.75%);
+}
+
+/* cards in main */
+
+img[alt="card"]{
+    width: 250px;
+}
+
+.card {
+    width: fit-content;
+    margin: 1rem;
+}
+
+#cards {
+    margin: 5rem 0 0 0;
 }
 
 /* footer */
