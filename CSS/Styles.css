@@ -40,4 +40,45 @@ img[alt="logo"] {
     color: white;
 }
 
+/* main */
 
+main {
+    height: 100vh;
+}
+
+/* footer */
+
+.footer {
+    position: relative;
+    bottom:0;
+    background: #102C57;
+}
+
+.footer div {
+    color: white;
+    justify-content: space-around;
+}
+
+.box1 {
+    display: flex;
+}
+
+.box1 div p:nth-child(1) {
+    margin: 1em 0 1em 0;
+    font-size: 2em;
+}
+
+.box1 div p{
+    margin: .5em 0 1em 0;
+}
+
+.copywrite {
+    display: flex;
+    flex-flow: column;
+}
+
+.copywrite p {
+    display: flex;
+    justify-content: center;
+    margin: .3em;
+}
