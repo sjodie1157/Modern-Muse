@@ -60,6 +60,8 @@ main :is(.sec-2) {
     color: #DAC0A3;
     font-size: 75px;
     font-weight: 700;
+    display: flex;
+    justify-content: center;
 }
 
 .sec-1 p {
@@ -72,6 +74,8 @@ main :is(.sec-2) {
     color: #102C57;
     font-size: 75px;
     font-weight: 700;
+    display: flex;
+    justify-content: center;
 }
 
 #main-landing {
@@ -112,7 +116,7 @@ img[alt="card"]{
     font-size: 2em;
 }
 
-.box1 div p{
+.box1 div p {
     margin: .5em 0 1em 0;
 }
 
