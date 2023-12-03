@@ -13,6 +13,12 @@ img[alt="logo"] {
     width: 175px;
 }
 
+#navbar {
+    z-index: 10;
+    position: sticky;
+    top: 0;
+}
+
 #navbar span {
     font-weight: bolder;
 }
@@ -43,11 +49,11 @@ img[alt="logo"] {
 /* main */
 
 main :is(.sec-1) {
-    padding: 3rem 0 21rem 0;
+    padding: 3rem 0 10rem 0;
 }
 
 main :is(.sec-2) {
-    padding: 3rem 0 5rem 0;
+    padding: 3rem 0 1rem 0;
 }
 
 .sec-1 h1 {
@@ -80,12 +86,12 @@ img[alt="card"]{
 
 .card {
     width: fit-content;
-    margin: 1rem;
 }
 
-#cards {
-    margin: 5rem 0 0 0;
+.animate {
+    margin: 0 2rem 1rem 0;
 }
+
 
 /* footer */
 
@@ -122,4 +128,21 @@ img[alt="card"]{
     display: flex;
     justify-content: center;
     margin: .3em;
+}
+
+/* animation landing */
+
+section .animate {
+    transition: 1s;
+    overflow: hidden;
+}
+
+.sec-1 .animate {
+    transform: translatey(0%);
+    color: white;
+}
+
+.sec-1.show-animate .animate {
+    transform: translatey(-100%);
+    color: transparent;
 }
