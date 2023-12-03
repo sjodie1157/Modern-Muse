@@ -40,7 +40,7 @@ ftrarr4.forEach((footlink)=>{
 })
 
 // copywrite claim
-    footerDivEl.innerHTML += `<p>2023 Modern Muse</p>`
+footerDivEl.innerHTML += `<p><span id="currentYear"></span>&copy; Modern Muse</p>`
 
 
 // footer append
@@ -52,3 +52,6 @@ fterDivEl.appendChild(fterDivEl2)
 fterDivEl.appendChild(fterDivEl3)
 fterDivEl.appendChild(fterDivEl4)
 document.body.appendChild(footer)
+
+// copywrite year function 
+document.getElementById("currentYear").textContent = new Date().getUTCFullYear()
