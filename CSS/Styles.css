@@ -455,3 +455,24 @@ img[alt="check-Item"] {
     width: fit-content;
 }
 
+.form-button {
+    width: fit-content;
+    background-color: #102C57;
+    border: none;
+    padding: .1em;
+    margin: 0 0 2em 2em;
+    border-radius: .3pc;
+    transition: .2s;
+    font-size: 25px;
+    color: white;
+}
+
+.form-button:hover {
+    width: fit-content;
+    background-color: #102C57;
+    border: none;
+    padding: .3em;
+    border-radius: .5pc;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    color: white;
+}
