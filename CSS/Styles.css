@@ -401,3 +401,57 @@ img[alt="check-Item"] {
 }
 
 /* contact page */
+
+#main-contact .container{
+    background-color: white;
+    border-radius: 1pc;
+}
+
+#main-contact h1 {
+    color: #102C57;
+    display: flex;
+    font-size: 75px;
+}
+
+.basis-small {
+    display: flex;
+    flex-basis: 1%;
+    color: #102C57;
+    font-size: 250px;
+    font-weight: lighter;
+}
+
+.basis-big {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+    color: #102C57;
+}
+
+.basis-big {
+    display: flex;
+    flex-basis: 40%;
+}
+
+.basis-big p, a {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+    color: #102C57;
+}
+
+#main-contact {
+    background-image: linear-gradient(#DAC0A3 , #102C57);
+    padding: 2em 0 15em 0;
+}
+
+.basis-big textarea, input {
+    border: none;
+    background-color: #DAC0A3;
+    width: fit-content;
+}
+
