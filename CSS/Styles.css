@@ -396,8 +396,9 @@ img[alt="check-Item"] {
     justify-content: center;
 }
 
-#main-admin td, th {
+#main-admin :is(td, th) {
     color: #102C57;
+    text-align: center ;
 }
 
 /* contact page */
