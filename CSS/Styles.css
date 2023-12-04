@@ -91,6 +91,13 @@ img[alt="card"]{
 .card {
     margin: 0 2rem 1rem 0;
     width: fit-content;
+    transition: .2s;
+}
+
+.card:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    margin: 0 2rem 1rem 0;
+    width: fit-content;
 }
 
 
@@ -187,7 +194,102 @@ img[alt="team"]{
     font-size: 30px;
 }
 
-#main-about {
+#main-about {  
     background: #DAC0A3;
 }
+
+/* product */
+
+#main-product {
+    background-color: #DAC0A3;
+    padding: 0 0 2em 0;
+}
+
+.prod-top {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    padding: 2rem 0;
+    flex-flow: wrap;
+}
+
+#prod-el span {
+    display: flex;
+    width: 100%;
+}
+
+#main-product .container:nth-child(2) {
+    width: fit-content;
+    background-color: #102C57;
+    border-radius: 2pc;
+}
+
+#main-product button {
+    width: fit-content;
+    background-color: #102C57;
+    border: none;
+    padding: .3em;
+    border-radius: 1pc;
+    transition: .2s;
+    color: white;
+}
+
+#main-product button:hover {
+    width: fit-content;
+    background-color: #102C57;
+    border: none;
+    padding: .3em;
+    border-radius: .5pc;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    color: white;
+}
+
+#main-product input {
+    width: fit-content;
+    background-color: #102C57;
+    border: none;
+    border-radius: 1pc;
+    color: white;
+    transition: .2s;
+    font-size: 30px;
+}
+
+#main-product input:hover {
+    width: fit-content;
+    background-color: #102C57;
+    border: none;
+    border-radius: .5pc;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    font-size: 30px;
+}
+
+#main-product input {
+    width: fit-content;
+    background-color: #102C57;
+    border: none;
+    padding: .5em;
+    border-radius: 1pc;
+    color: white;
+    font-size: 30px;
+}
+
+#main-product h1 {
+    border: none;
+    color: #102C57;
+    font-size: 75px;
+}
+
+.sortbtn {
+    width: fit-content;
+    background-color: #102C57;
+    border: none;
+    padding: .5em;
+    border-radius: 1pc;
+    color: white;
+    font-size: 30px
+}
+
+
+
 
