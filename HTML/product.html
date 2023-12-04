@@ -59,11 +59,11 @@
     <main id="main-product">
         <div class="container">
             <div class="prod-top">
-                <input type="text" data-prod-search placeholder="Search Product">
+                <input type="text" data-prod-search="Search product input" placeholder="Search Product">
                 <h1>
                     Collection
                 </h1>
-                <button type="button" class="sortbtn">Sort by price</button>
+                <button type="button" class="sortbtn" data-sortBtn="sort button">Sort by price</button>
             </div>
         </div>
         <!-- product cards -->
@@ -71,47 +71,7 @@
             <div class="container d-flex flex-wrap">
                 <div class="col d-flex justify-content-center">
                     <div class="row" id="card-prod">
-                        <div class="col d-flex flex-wrap justify-content-center m-5">
-                            <div class="card">
-                                <img src="https://i.postimg.cc/mZM0RvhT/placeholder.jpg" class="card-img-top" alt="card" loading="lazy">
-                                <div class="card-body">
-                                  <p class="card-text">Blue Suit</p>
-                                  <p class="card-text">Price:</p>
-                                  <button type="button">Add To Cart</button>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <img src="https://i.postimg.cc/mZM0RvhT/placeholder.jpg" class="card-img-top" alt="card" loading="lazy">
-                                <div class="card-body">
-                                  <p class="card-text">Blue Suit</p>
-                                  <p class="card-text">Price:</p>
-                                  <button type="button">Add To Cart</button>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <img src="https://i.postimg.cc/mZM0RvhT/placeholder.jpg" class="card-img-top" alt="card" loading="lazy">
-                                <div class="card-body">
-                                  <p class="card-text">Blue Suit</p>
-                                  <p class="card-text">Price:</p>
-                                  <button type="button">Add To Cart</button>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <img src="https://i.postimg.cc/mZM0RvhT/placeholder.jpg" class="card-img-top" alt="card" loading="lazy">
-                                <div class="card-body">
-                                  <p class="card-text">Blue Suit</p>
-                                  <p class="card-text">Price:</p>
-                                  <button type="button">Add To Cart</button>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <img src="https://i.postimg.cc/mZM0RvhT/placeholder.jpg" class="card-img-top" alt="card" loading="lazy">
-                                <div class="card-body">
-                                  <p class="card-text">Blue Suit</p>
-                                  <p class="card-text">Price:</p>
-                                  <button type="button">Add To Cart</button>
-                                </div>
-                            </div>
+                        <div class="col d-flex flex-wrap justify-content-center m-5" data-card-create="">
                         </div>
                     </div>
                 </div>
