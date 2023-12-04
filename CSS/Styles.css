@@ -294,7 +294,7 @@ img[alt="team"]{
 
 
 
-#main-checkout {
+#main-checkout, #main-admin {
     background-color: #DAC0A3;
     padding: 2em;
 }
@@ -361,3 +361,43 @@ img[alt="check-Item"] {
     font-size: 40px;
 }
 
+/* admin page */
+
+#main-admin .container:nth-child(2){
+    background-color: white;
+    border-radius: 1pc;
+}
+
+#main-admin h1 {
+    color: #102C57;
+    display: flex;
+    margin: .3em;
+    justify-content: center;
+    text-decoration: 3px underline overline;
+    font-size: 75px;
+}
+
+#main-admin button {
+    width: fit-content;
+    background-color: #102C57;
+    border: none;
+    padding: .3em;
+    margin: .5rem 0;
+    border-radius: .5pc;
+    font-size: 20px;
+    transition: .2s;
+    color: white;
+}
+
+#main-admin table button {
+    display: flex;
+    flex-direction: column;
+    width: 85px;
+    justify-content: center;
+}
+
+#main-admin td, th {
+    color: #102C57;
+}
+
+/* contact page */
