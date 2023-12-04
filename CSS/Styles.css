@@ -290,6 +290,74 @@ img[alt="team"]{
     font-size: 30px
 }
 
+/* checkout page */
 
 
+
+#main-checkout {
+    background-color: #DAC0A3;
+    padding: 2em;
+}
+
+#main-checkout .container{
+    background-color: #102C57;
+    border-radius: 1pc;
+}
+
+#main-checkout h1 {
+    color: white;
+    display: flex;
+    margin: .3em;
+    justify-content: center;
+    text-decoration: 3px underline overline;
+    font-size: 75px;
+}
+
+.item-table {
+    display: flex;
+    justify-content: center;
+}
+
+.item-table {    
+    color: white;
+}
+
+table {
+    width: 100%;
+}
+
+img[alt="check-Item"] {
+    width: 100px;
+    margin: .5rem 0;
+    border-radius: .3pc;
+}
+
+#main-checkout button {
+    width: fit-content;
+    color: #102C57;
+    border: none;
+    padding: .3em;
+    border-radius: .5pc;
+    transition: .2s;
+    margin: 2rem 0;
+    font-size: 20px;
+    background-color: white;
+}
+
+#main-checkout button:hover {
+    width: fit-content;
+    color: #102C57;
+    border: none;
+    padding: .3em;
+    border-radius: .5pc;
+    box-shadow: rgba(255, 255, 255, 0.16) 0px 3px 6px, rgba(255, 255, 255, 0.23) 0px 3px 6px;
+    background-color: white;
+}
+
+.price-lable {
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+}
 
