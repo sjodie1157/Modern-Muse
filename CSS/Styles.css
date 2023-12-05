@@ -84,7 +84,7 @@ main :is(.sec-2) {
 
 /* cards in main */
 
-img[alt="card"]{
+img[alt="card"] {
     width: 220px;
     aspect-ratio: 1/1.3;
 }
@@ -106,7 +106,7 @@ img[alt="card"]{
 
 .footer {
     position: relative;
-    bottom:0;
+    bottom: 0;
     background: #102C57;
 }
 
@@ -158,20 +158,20 @@ section .animate {
 
 /* about */
 
-img[alt="aboutImg1"]{
+img[alt="aboutImg1"] {
     border-radius: 2pc;
     margin: 2rem 0;
     border: .2rem solid #102C57;
     width: 300px;
 }
 
-img[alt="team"]{
+img[alt="team"] {
     width: 200px;
     border-radius: 100pc;
     border: .2rem solid #102C57;
 }
 
-#team h4{
+#team h4 {
     display: flex;
     justify-content: center;
 }
@@ -191,11 +191,11 @@ img[alt="team"]{
     font-size: 70px;
 }
 
-#main-about :is(p,h4) {
+#main-about :is(p, h4) {
     font-size: 30px;
 }
 
-#main-about {  
+#main-about {
     background: #DAC0A3;
 }
 
@@ -295,7 +295,7 @@ img[alt="team"]{
     margin: 8rem;
 }
 
-#no-items{
+#no-items {
     margin: 8rem;
     color: white;
 }
@@ -305,12 +305,13 @@ img[alt="team"]{
 
 
 
-#main-checkout, #main-admin {
+#main-checkout,
+#main-admin {
     background-color: #DAC0A3;
     padding: 2em;
 }
 
-#main-checkout .container{
+#main-checkout .container {
     background-color: #102C57;
     border-radius: 1pc;
 }
@@ -327,9 +328,6 @@ img[alt="team"]{
 .item-table {
     display: flex;
     justify-content: center;
-}
-
-.item-table {    
     color: white;
 }
 
@@ -374,7 +372,7 @@ img[alt="check-Item"] {
 
 /* admin page */
 
-#main-admin .container:nth-child(2){
+#main-admin .container:nth-child(2) {
     background-color: white;
     border-radius: 1pc;
 }
@@ -409,12 +407,12 @@ img[alt="check-Item"] {
 
 #main-admin :is(td, th) {
     color: #102C57;
-    text-align: center ;
+    text-align: center;
 }
 
 /* contact page */
 
-#main-contact .container{
+#main-contact .container {
     background-color: white;
     border-radius: 1pc;
 }
@@ -447,7 +445,8 @@ img[alt="check-Item"] {
     flex-basis: 40%;
 }
 
-.basis-big p, a {
+.basis-big p,
+a {
     display: flex;
     justify-content: center;
     text-decoration: none;
@@ -457,11 +456,12 @@ img[alt="check-Item"] {
 }
 
 #main-contact {
-    background-image: linear-gradient(#DAC0A3 , #102C57);
+    background-image: linear-gradient(#DAC0A3, #102C57);
     padding: 2em 0 15em 0;
 }
 
-.basis-big textarea, input {
+.basis-big textarea,
+input {
     border: none;
     background-color: #DAC0A3;
     width: fit-content;
