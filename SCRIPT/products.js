@@ -2,45 +2,88 @@ let localItems = JSON.parse(localStorage.getItem('items')) || []
 let ascendingOrder = true
 let listItems = localItems || []
 
+if (localItems.length === 0) {
+    localItems = [
+        {
+            id: 1,
+            name: "Black Mist",
+            category: "Suit",
+            colour: "Black",
+            price: 25000,
+            designer: "Gucci",
+            imgLink: "https://i.postimg.cc/GhtDcywF/Black-Suit.jpg"
+        },
+        {
+            id: 2,
+            name: "Grey Matter",
+            category: "Tuxido",
+            colour: "Grey",
+            price: 36070,
+            designer: "Prada",
+            imgLink: "https://i.postimg.cc/0yHcksBQ/Grey-suit.jpg"
+        },
+        {
+            id: 3,
+            name: "Red Crimson",
+            category: "Suit",
+            colour: "Red",
+            price: 72000,
+            designer: "Gucci",
+            imgLink: "https://i.postimg.cc/Pq934jWc/red-suit.jpg"
+        },
+        {
+            id: 4,
+            name: "Envious",
+            category: "Suit",
+            colour: "Green",
+            price: 93000,
+            designer: "Givenchy",
+            imgLink: "https://i.postimg.cc/0y5B5Z5t/Green-suit.jpg"
+        }
+    ]
+    localStorage.setItem('items', JSON.stringify(localItems))
+}
+
 function showItem() {
-    try{
-    let html = ''
-    let itemShow = document.querySelector('[data-card-create]')
+    try {
+        let html = ''
+        let itemShow = document.querySelector('[data-card-create]')
 
         // Spinner from Bootstrap if no objects are found in Local Storage
-    if(listItems.length == 0){
+        if (listItems.length == 0) {
             html = `<div class="spinner-border text-primary" id="spinner" role="status">
             <span class="visually-hidden">Loading...</span>
             </div>`
-    }else{
-            listItems.forEach((item)=>{
+        } else {
+            listItems.forEach((item) => {
                 html += `
                     <div class="card">
                     <img src="${item.imgLink}" class="card-img-top" alt="card" loading="lazy">
                      <div class="card-body">
-                    <p class="card-text">Designed by ${item.designer}</p>
-                    <p class="card-text">Suit colour ${item.colour}</p>
+                    <p class="card-text">Suit name: ${item.name}</p>
+                    <p class="card-text">Designed by: ${item.designer}</p>
+                    <p class="card-text">Suit colour: ${item.colour}</p>
                     <p class="card-text">R ${item.price}</p>
                     <button type="button">Add To Cart</button>
                     </div>
                     </div>
                 `
-        })
-    }
+            })
+        }
 
-    itemShow.innerHTML = html
-}catch(e){
-    console.error('error on display function', e.message)
-}
+        itemShow.innerHTML = html
+    } catch (e) {
+        console.error('error on display function', e.message)
+    }
 }
 
 // Sort function in Local Storage
-function toggleSort(){
-    try{
-        if(ascendingOrder){
-        localItems.sort((a, b) => a.price - b.price)
-            } else {
-        localItems.sort((a, b) => b.price - a.price)
+function toggleSort() {
+    try {
+        if (ascendingOrder) {
+            localItems.sort((a, b) => a.price - b.price)
+        } else {
+            localItems.sort((a, b) => b.price - a.price)
         }
 
         ascendingOrder = !ascendingOrder;
@@ -54,29 +97,30 @@ function toggleSort(){
 
 showItem()
 
-let srtbtn = document.querySelector('[data-sortBtn]').addEventListener('click',toggleSort)
+let srtbtn = document.querySelector('[data-sortBtn]').addEventListener('click', toggleSort)
 
 // search and return items function
 function filterItems() {
     try {
         let searchInput = document.querySelector('[data-prod-search]')
-    let searchTerm = searchInput.value.toLowerCase()
-    if (searchTerm ===''){
-        listItems = localItems; 
-        // Reset to all items when search items is empty
-    }else{
-        listItems = localItems.filter(item=>
-            item.designer.toLowerCase().includes(searchTerm)
-        
-        )}
-    if(listItems.length == 0){
-        document.querySelector('[data-card-create]').innerHTML = '<p id="no-items">No items found</p>'
-    }else{
-    showItem()
+        let searchTerm = searchInput.value.toLowerCase()
+        if (searchTerm === '') {
+            listItems = localItems;
+            // Reset to all items when search items is empty
+        } else {
+            listItems = localItems.filter(item =>
+                item.name.toLowerCase().includes(searchTerm)
+
+            )
+        }
+        if (listItems.length == 0) {
+            document.querySelector('[data-card-create]').innerHTML = '<p id="no-items">No items found</p>'
+        } else {
+            showItem()
+        }
+    } catch (e) {
+        console.error('error on filter function', e.message);
     }
-}catch(e) {
-    console.error('error on filter function', e.message);
-}
 }
 
 let filtbtn = document.querySelector('[data-prod-search]').addEventListener('keyup', filterItems)

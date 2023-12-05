@@ -85,7 +85,7 @@ main :is(.sec-2) {
 /* cards in main */
 
 img[alt="card"]{
-    width: 200px;
+    width: 220px;
     aspect-ratio: 1/1.3;
 }
 
