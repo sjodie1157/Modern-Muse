@@ -40,7 +40,7 @@ purchasedBtn.addEventListener('click', function () {
         if (purchased.length === 0) {
             alert('No Items Added')
         } else {
-            localStorage.setItem('purchased', JSON.stringify(purchased))
+            localStorage.clear('purchased', JSON.stringify(purchased))
             alert('Thanks For Your Purchase')
             location.reload()
         }
