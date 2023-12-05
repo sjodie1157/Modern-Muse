@@ -5,12 +5,12 @@ let purchasedItem = document.querySelector('[data-rowTable]')
 function purchasedItems() {
     try {
         let uniqueItemIds = new Set()
-        let html = ''
+
 
         purchased.forEach((item, index) => {
             if (!uniqueItemIds.has(item.id)) {
                 uniqueItemIds.add(item.id)
-                html += `
+                purchasedItem.innerHTML += `
                     <tr>
                         <td>${item.name}</td>
                         <td>${item.category}</td>
@@ -21,9 +21,7 @@ function purchasedItems() {
             }
         })
 
-        purchasedItem.innerHTML = html
-
-        // Add event listeners to all remove buttons
+// Added event listeners to all remove buttons
         let removeBtns = document.querySelectorAll('.removeBtn')
         removeBtns.forEach(btn => {
             btn.addEventListener('click', removeItem)
@@ -75,8 +73,10 @@ function removeItem(event) {
 
         if (itemToRemove.quantity > 1) {
             itemToRemove.quantity -= 1
+            location.reload()
         } else {
             purchased.splice(index, 1)
+            location.reload()
         }
 
         localStorage.setItem('purchased', JSON.stringify(purchased))
