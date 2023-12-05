@@ -1,7 +1,7 @@
 let localItems = JSON.parse(localStorage.getItem('items')) || []
 let ascendingOrder = true
 let listItems = localItems || []
-let purchased =[]
+let purchased = []
 if (localItems.length === 0) {
     localItems = [
         {
@@ -55,7 +55,7 @@ function showItem() {
             <span class="visually-hidden">Loading...</span>
             </div>`
         } else {
-            listItems.map((item,index) => {
+            listItems.map((item, index) => {
                 html += `
                     <div class="card">
                     <img src="${item.imgLink}" class="card-img-top" alt="card" loading="lazy">
@@ -78,16 +78,14 @@ function showItem() {
 }
 
 // add to cart buttons targeting indivudal buttons
-itemShow.addEventListener('click',()=>{
-    if(event.target.hasAttribute('data-addToCart')){
-        purchased.push(listItems[event.target.value])
-        if(localStorage.getItem('purchased')){
-            
-        }else {
-            localStorage.setItem('purchased', JSON.stringify(purchased))
-        }
+itemShow.addEventListener('click', (event) => {
+    if (event.target.hasAttribute('data-addToCart')) {
+        purchased.push(listItems[event.target.value]);
+
+        // Update local storage with the new purchased data
+        localStorage.setItem('purchased', JSON.stringify(purchased));
     }
-})
+});
 
 
 // Sort function in Local Storage
