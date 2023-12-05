@@ -1,7 +1,7 @@
 let localItems = JSON.parse(localStorage.getItem('items')) || []
 let ascendingOrder = true
 let listItems = localItems || []
-
+let purchased =[]
 if (localItems.length === 0) {
     localItems = [
         {
@@ -44,10 +44,10 @@ if (localItems.length === 0) {
     localStorage.setItem('items', JSON.stringify(localItems))
 }
 
+let itemShow = document.querySelector('[data-card-create]')
 function showItem() {
     try {
         let html = ''
-        let itemShow = document.querySelector('[data-card-create]')
 
         // Spinner from Bootstrap if no objects are found in Local Storage
         if (listItems.length == 0) {
@@ -55,7 +55,7 @@ function showItem() {
             <span class="visually-hidden">Loading...</span>
             </div>`
         } else {
-            listItems.forEach((item) => {
+            listItems.map((item,index) => {
                 html += `
                     <div class="card">
                     <img src="${item.imgLink}" class="card-img-top" alt="card" loading="lazy">
@@ -64,11 +64,11 @@ function showItem() {
                     <p class="card-text">Designed by: ${item.designer}</p>
                     <p class="card-text">Suit colour: ${item.colour}</p>
                     <p class="card-text">R ${item.price}</p>
-                    <button type="button">Add To Cart</button>
+                    <button type="button" value='${index}' data-addToCart>Add To Cart</button>
                     </div>
                     </div>
                 `
-            })
+            }).join('')
         }
 
         itemShow.innerHTML = html
@@ -76,6 +76,15 @@ function showItem() {
         console.error('error on display function', e.message)
     }
 }
+
+// add to cart buttons targeting indivudal buttons
+itemShow.addEventListener('click',()=>{
+    if(event.target.hasAttribute('data-addToCart')){
+        purchased.push(listItems[event.target.value])
+        localStorage.setItem('purchased', JSON.stringify(purchased))
+    }
+})
+
 
 // Sort function in Local Storage
 function toggleSort() {
