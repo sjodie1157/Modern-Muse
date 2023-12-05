@@ -81,7 +81,11 @@ function showItem() {
 itemShow.addEventListener('click',()=>{
     if(event.target.hasAttribute('data-addToCart')){
         purchased.push(listItems[event.target.value])
-        localStorage.setItem('purchased', JSON.stringify(purchased))
+        if(localStorage.getItem('purchased')){
+            
+        }else {
+            localStorage.setItem('purchased', JSON.stringify(purchased))
+        }
     }
 })
 
