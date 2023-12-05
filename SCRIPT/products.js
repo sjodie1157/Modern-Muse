@@ -13,22 +13,22 @@ function showItem() {
             <span class="visually-hidden">Loading...</span>
             </div>`
     }else{
-            listItems.forEach((suit, index)=>{
+            listItems.forEach((item)=>{
                 html += `
                     <div class="card">
-                    <img src="${suit.imgLink}" class="card-img-top" alt="card" loading="lazy">
+                    <img src="${item.imgLink}" class="card-img-top" alt="card" loading="lazy">
                      <div class="card-body">
-                    <p class="card-text">Designed by ${suit.designer}</p>
-                    <p class="card-text">Suit colour ${suit.colour}</p>
-                    <p class="card-text">R ${suit.price}</p>
+                    <p class="card-text">Designed by ${item.designer}</p>
+                    <p class="card-text">Suit colour ${item.colour}</p>
+                    <p class="card-text">R ${item.price}</p>
                     <button type="button">Add To Cart</button>
                     </div>
                     </div>
                 `
         })
-        }
+    }
 
-        itemShow.innerHTML = html
+    itemShow.innerHTML = html
 }catch(e){
     console.error('error on display function', e.message)
 }
@@ -62,7 +62,8 @@ function filterItems() {
         let searchInput = document.querySelector('[data-prod-search]')
     let searchTerm = searchInput.value.toLowerCase()
     if (searchTerm ===''){
-        listItems = localItems; // Reset to all items when search term is empty
+        listItems = localItems; 
+        // Reset to all items when search items is empty
     }else{
         listItems = localItems.filter(item=>
             item.designer.toLowerCase().includes(searchTerm)
