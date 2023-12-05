@@ -12,8 +12,8 @@ function purchasedItems() {
                 uniqueItemIds.add(item.id)
                 html += `
                     <tr>
-                        <td><img src="${item.imgLink}" alt="check-Item"></td>
                         <td>${item.name}</td>
+                        <td>${item.category}</td>
                         <td>${item.quantity}</td>
                         <td>${item.price}</td>
                         <td><button type="button" class="removeBtn" data-index="${index}">Remove</button></td>
@@ -22,14 +22,15 @@ function purchasedItems() {
         })
 
         purchasedItem.innerHTML = html
- // Add event listeners to all remove buttons
+
+        // Add event listeners to all remove buttons
         let removeBtns = document.querySelectorAll('.removeBtn')
         removeBtns.forEach(btn => {
             btn.addEventListener('click', removeItem)
         })
 
     } catch (e) {
-        console.error('error adding items and removing duplicates', e.message)
+        console.error('error adding items and removing duplicates', e.message);
     }
 }
 
@@ -41,12 +42,12 @@ purchasedBtn.addEventListener('click', function () {
         if (purchased.length === 0) {
             alert('No Items Added')
         } else {
-            localStorage.clear('purchased')
+            localStorage.setItem('purchased', JSON.stringify(purchased))
             alert('Thanks For Your Purchase')
             location.reload()
         }
     } catch (e) {
-        console.error('error clearing local storage or displaying alert', e.message)
+        console.error('error updating local storage or displaying alert', e.message);
     }
 })
 
@@ -61,7 +62,7 @@ function totalPrice() {
 
         total.innerHTML = `Total Price: R ${(totalPrice / 100).toFixed(2)}`
     } catch (e) {
-        console.error('Error on total price calculation', e.message)
+        console.error('Error on total price calculation', e.message);
     }
 }
 
@@ -74,15 +75,14 @@ function removeItem(event) {
 
         if (itemToRemove.quantity > 1) {
             itemToRemove.quantity -= 1
-            location.reload()
         } else {
             purchased.splice(index, 1)
-            location.reload()
         }
 
         localStorage.setItem('purchased', JSON.stringify(purchased))
         purchasedItems()
+        totalPrice()
     } catch (e) {
-        console.error('error removing item', e.message)
+        console.error('error removing item', e.message);
     }
 }
