@@ -55,7 +55,7 @@ function totalPrice() {
         let totalPrice = 0
 
         purchased.forEach(item => {
-            totalPrice += item.price * item.quantity
+            totalPrice += (item.price*100) * item.quantity
         })
 
         total.innerHTML = `Total Price: R ${(totalPrice / 100).toFixed(2)}`
