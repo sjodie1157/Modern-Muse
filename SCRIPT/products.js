@@ -54,8 +54,6 @@ let itemShow = document.querySelector('[data-card-create]')
 
 function showItem() {
     try {
-        let html = ''
-
         // Spinner from Bootstrap if no objects are found in Local Storage
         if (listItems.length == 0) {
             html = `<div class="spinner-border text-primary" id="spinner" role="status">
@@ -66,7 +64,7 @@ function showItem() {
                 .map((item, index) => {
                     return `
                         <div class="card">
-                            <img src="${item.imgLink}" class="card-img-top" alt="card" loading="lazy">
+                            <img src="${item.imgLink}" class="card-img-top" alt="card">
                             <div class="card-body">
                                 <p class="card-text">Suit name: ${item.name}</p>
                                 <p class="card-text">Designed by: ${item.designer}</p>

@@ -20,7 +20,6 @@ function purchasedItems() {
                     </tr>`
             }
         })
-
 // Added event listeners to all remove buttons
         let removeBtns = document.querySelectorAll('.removeBtn')
         removeBtns.forEach(btn => {
