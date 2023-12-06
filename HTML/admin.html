@@ -80,33 +80,60 @@
                 </h1>
             </div>
             <div class="item-table">
-                <table>
+                <table data-rowTable>
                     <tr>
-                        <th>Image</th>
-                        <th>Items</th>
-                        <th>Price</th>
-                        <th>Action</th>
-                    </tr>
-                    <tr>
-                        <td><img src="https://i.postimg.cc/mZM0RvhT/placeholder.jpg" alt="check-Item"></td>
-                        <td>Test Item 1</td>
-                        <td>Amount +</td>
-                        <td>
-                            <div class="col d-flex justify-content-center">
-                                <button type="button">Add Itm</button>
-                            </div>
-                            <div class="col d-flex justify-content-center">
-                                <button type="button">Remove</button>
-                            </div>
-                        </td>
+                        <td>Item Name</td>
+                        <td>Category</td>
+                        <td>Colour</td>
+                        <td>Price</td>
+                        <td>Designer</td>
+                        <td>Image</td>
+                        <td>Action</td>
                     </tr>
                 </table>
             </div>
-            <div class="price-lable">
-                <label for="sum price">Total Price:</label>
-            </div>
-            <div class="purchase-Button">
-                <button type="button">Add Product</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Add Product</button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title fs-5" id="exampleModalLabel">Add Item</h2>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                            <div class="mb-3">
+                                <label for="name" class="col-form-label">Product Name:</label>
+                                <input type="text" class="form-control" id="name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="category" class="col-form-label">Category:</label>
+                                <input type="text" class="form-control" id="category">
+                            </div>
+                            <div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">Colour</label>
+                                <input type="text" class="form-control" id="colour">
+                            </div>
+                            <div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">Price</label>
+                                <input type="text" class="form-control" id="price">
+                            </div>
+                            <div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">Designer</label>
+                                <input type="text" class="form-control" id="designer">
+                            </div>
+                            <div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">Image Link</label>
+                                <input type="text" class="form-control" id="imgLink">
+                            </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary m-1" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" data-add-Item="">Add Item</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
