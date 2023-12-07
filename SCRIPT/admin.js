@@ -40,12 +40,13 @@ aria-hidden="true">
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary m-1" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary"  data-edit-Item >Edit Item</button>
+            <button type="button" class="btn btn-primary" onclick="editAdd()" data-bs-dismiss="modal">Edit Item</button>
         </div>
     </div>
 </div>
 </div>
 `
+
 function showItem() {
     try {
         let html;
@@ -68,37 +69,34 @@ function showItem() {
                             <td>
                                 <div class="col d-flex justify-content-center">
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editItemModal"
-                                data-bs-whatever="@mdo" onclick='new EditItems(${JSON.stringify(item)})' >Edit Itm</button>
+                                data-bs-whatever="@mdo" onclick="EditRecord(${index})">Edit Item</button>
                             
                                 </div>
                                 <div class="col d-flex justify-content-center">
                                     <button type="button" data-item-id="${item.id}" onclick="removeItem(this)">Remove</button>
                                 </div>
                             </td>
-                        </tr>`
+                        </tr>`;
                 })
-                .join('')
+                .join('');
         }
-        addItemDisplayOnAdmin.innerHTML = html
+        addItemDisplayOnAdmin.innerHTML = html;
     } catch (e) {
         console.error('Error on display function', e.message);
     }
 }
 
-// C.R.U.D system
-
-// Create C in Crud
 function addItem() {
     try {
-        let name = document.querySelector('#name').value
-        let category = document.querySelector('#category').value
-        let colour = document.querySelector('#colour').value
-        let price = +document.querySelector('#price').value
-        let designer = document.querySelector('#designer').value
-        let imgLink = document.querySelector('#imgLink').value
+        let name = document.querySelector('#name').value;
+        let category = document.querySelector('#category').value;
+        let colour = document.querySelector('#colour').value;
+        let price = +document.querySelector('#price').value;
+        let designer = document.querySelector('#designer').value;
+        let imgLink = document.querySelector('#imgLink').value;
 
-        let oldItems = listItems || []
-        let lastId = oldItems.reduce((max, item) => (item.id > max ? item.id : max), 0)
+        let oldItems = listItems || [];
+        let lastId = oldItems.reduce((max, item) => (item.id > max ? item.id : max), 0);
 
         let newItem = {
             id: lastId + 1,
@@ -108,11 +106,11 @@ function addItem() {
             price: price,
             designer: designer,
             imgLink: imgLink
-        }
+        };
 
-        let updatedItems = [...oldItems, newItem]
-        localStorage.setItem('items', JSON.stringify(updatedItems))
-        listItems = updatedItems
+        let updatedItems = [...oldItems, newItem];
+        localStorage.setItem('items', JSON.stringify(updatedItems));
+        listItems = updatedItems;
         showItem();
     } catch (e) {
         console.error('Error on trying to create new items', e.message);
@@ -121,79 +119,79 @@ function addItem() {
 
 function removeItem(button) {
     try {
-        let itemId = button.dataset.itemId
-        listItems = listItems.filter(item => item.id != itemId)
-        localStorage.setItem('items', JSON.stringify(listItems))
-        showItem()
+        let itemId = button.dataset.itemId;
+        listItems = listItems.filter(item => item.id != itemId);
+        localStorage.setItem('items', JSON.stringify(listItems));
+        showItem();
     } catch (e) {
         console.error('Error on removing item', e.message);
     }
 }
 
-let addItemButton = document.querySelector('[data-add-Item]')
+let addItemButton = document.querySelector('[data-add-Item]');
 addItemButton.addEventListener('click', addItem);
 
-let addItemDisplayOnAdmin = document.querySelector('[data-rowTable]')
-
-// Read R in Crud (location reload requires a double-click on startup)
+let addItemDisplayOnAdmin = document.querySelector('[data-rowTable]');
 
 function toggleSort() {
     try {
         if (ascendingOrder) {
-            listItems.sort((a, b) => a.price - b.price)
+            listItems.sort((a, b) => a.price - b.price);
         } else {
-            listItems.sort((a, b) => b.price - a.price)
+            listItems.sort((a, b) => b.price - a.price);
         }
 
         ascendingOrder = !ascendingOrder;
-        localStorage.setItem('items', JSON.stringify(listItems))
-        
+        localStorage.setItem('items', JSON.stringify(listItems));
         showItem();
     } catch (e) {
-        console.error('Error on sort function', e.message)
+        console.error('Error on sort function', e.message);
     }
 }
 
-let srtbtn = document.querySelector('[data-sortBtnAdmin]')
-srtbtn.addEventListener('click', toggleSort)
+let srtbtn = document.querySelector('[data-sortBtnAdmin]');
+srtbtn.addEventListener('click', toggleSort);
 
-showItem()
+showItem();
 
-function Item(id, name, category, colour, price, designer, imgLink) {
-    this.id = id;
-    this.name = name;
-    this.category = category;
-    this.colour = colour;
-    this.price = price;
-    this.designer = designer;
-    this.imgLink = imgLink;
+function EditRecord(index) {
+    try {
+        let itemCompare = listItems[index];
+        id = itemCompare.id;
+        document.querySelector('#name-edit').value = itemCompare.name;
+        document.querySelector('#category-edit').value = itemCompare.category;
+        document.querySelector('#colour-edit').value = itemCompare.colour;
+        document.querySelector('#price-edit').value = itemCompare.price;
+        document.querySelector('#designer-edit').value = itemCompare.designer;
+        document.querySelector('#imgLink-edit').value = itemCompare.imgLink;
+
+        ids = index;
+    } catch (e) {
+        console.error('Error on editRecord function', e.message);
+    }
 }
 
-function EditItems(item) {
-    this.id = item.id;
-    this.name = document.querySelector(`#name-edit${item.id}`).value;
-    this.category = document.querySelector(`#admin-spec${item.id}`).value;
-    this.colour = document.querySelector(`#admin-amount${item.id}`).value;
-    this.price = document.querySelector(`#admin-amount${item.id}`).value;
-    this.designer = document.querySelector(`#admin-image${item.id}`).value;
-    this.imgLink = document.querySelector(`#admin-image${item.id}`).value;
-            
-    let itemIndex = listItems.findIndex((data)=>{
-    return data.id === item.id;
-    })
-            
-    listItems[itemIndex] = Object.assign({}, this)
-    localStorage.setItem('items', JSON.stringify(listItems))
-    display();
-    location.reload();
+function editAdd() {
+    try {
+        if (ids === -1) {
+            console.error('No item selected for editing.');
+            return;
+        }
+
+        let updatedItem = {
+            id: id,
+            name: document.querySelector('#name-edit').value,
+            category: document.querySelector('#category-edit').value,
+            colour: document.querySelector('#colour-edit').value,
+            price: +document.querySelector('#price-edit').value,
+            designer: document.querySelector('#designer-edit').value,
+            imgLink: document.querySelector('#imgLink-edit').value
+        };
+
+        listItems[ids] = updatedItem;
+        localStorage.setItem('items', JSON.stringify(listItems));
+        showItem();
+    } catch (e) {
+        console.error('Error on editAdd function', e.message);
+    }
 }
-
-// Add an event listener to each "Edit Item" button to trigger the updateItem function
-function editItems() {
-    updateItem(this);
-}
-
-
-// Attached the UpdateItems function to edit buttons
-
-
