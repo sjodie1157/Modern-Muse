@@ -1,6 +1,51 @@
 let listItems = JSON.parse(localStorage.getItem('items')) || []
 let ascendingOrder = true
 
+let edtModel = document.querySelector('#editModal')
+edtModel.innerHTML = `
+<div class="modal fade" id="editItemModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 class="modal-title fs-5" id="exampleModalLabel">Edit Item</h2>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="col-form-label">Product Name:</label>
+                    <input type="text" class="form-control" id="name-edit">
+                </div>
+                <div class="mb-3">
+                    <label for="category" class="col-form-label">Category:</label>
+                    <input type="text" class="form-control" id="category-edit">
+                </div>
+                <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Colour</label>
+                    <input type="text" class="form-control" id="colour-edit">
+                </div>
+                <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Price</label>
+                    <input type="text" class="form-control" id="price-edit">
+                </div>
+                <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Designer</label>
+                    <input type="text" class="form-control" id="designer-edit">
+                </div>
+                <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Image Link</label>
+                    <input type="text" class="form-control" id="imgLink-edit">
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary m-1" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary"  data-edit-Item >Edit Item</button>
+        </div>
+    </div>
+</div>
+</div>
+`
 function showItem() {
     try {
         let html;
@@ -23,7 +68,7 @@ function showItem() {
                             <td>
                                 <div class="col d-flex justify-content-center">
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editItemModal"
-                                data-bs-whatever="@mdo">Edit Itm</button>
+                                data-bs-whatever="@mdo" onclick='new EditItems(${JSON.stringify(item)})' >Edit Itm</button>
                             
                                 </div>
                                 <div class="col d-flex justify-content-center">
@@ -114,38 +159,41 @@ srtbtn.addEventListener('click', toggleSort)
 
 showItem()
 
-// Update U in Crud
-// Constructor function for items
-// Update U in Crud
-function UpdateItems(itemId) {
-    try {
-        let itemToEdit = listItems.find(item => item.id == itemId)
-        document.querySelector('#name-edit').value = itemToEdit.name
-        document.querySelector('#category-edit').value = itemToEdit.category
-        document.querySelector('#colour-edit').value = itemToEdit.colour
-        document.querySelector('#price-edit').value = itemToEdit.price
-        document.querySelector('#designer-edit').value = itemToEdit.designer
-        document.querySelector('#imgLink-edit').value = itemToEdit.imgLink
-
-        let editItemModal = new bootstrap.Modal(document.getElementById('editItemModal'))
-        editItemModal.show();
-    } catch (e) {
-        console.error('Error on edit function', e.message);
-    }
+function Item(id, name, category, colour, price, designer, imgLink) {
+    this.id = id;
+    this.name = name;
+    this.category = category;
+    this.colour = colour;
+    this.price = price;
+    this.designer = designer;
+    this.imgLink = imgLink;
 }
 
-// Attached the UpdateItems function to edit buttons
-let editButons = document.querySelectorAll('[data-edit-Item]')
-editButons.forEach(button => {
-    button.addEventListener('click', function () {
-        let itemId = button.dataset.itemId
-        UpdateItems(itemId)
+function EditItems(item) {
+    this.id = item.id;
+    this.name = document.querySelector(`#name-edit${item.id}`).value;
+    this.category = document.querySelector(`#admin-spec${item.id}`).value;
+    this.colour = document.querySelector(`#admin-amount${item.id}`).value;
+    this.price = document.querySelector(`#admin-amount${item.id}`).value;
+    this.designer = document.querySelector(`#admin-image${item.id}`).value;
+    this.imgLink = document.querySelector(`#admin-image${item.id}`).value;
+            
+    let itemIndex = listItems.findIndex((data)=>{
+    return data.id === item.id;
     })
-})
+            
+    listItems[itemIndex] = Object.assign({}, this)
+    localStorage.setItem('items', JSON.stringify(listItems))
+    display();
+    location.reload();
+}
+
+// Add an event listener to each "Edit Item" button to trigger the updateItem function
+function editItems() {
+    updateItem(this);
+}
 
 
-let editButtons = document.querySelectorAll('[data-edit-Item]')
-editButtons.forEach(button => {
-    button.addEventListener('click', UpdateItems)
-})
+// Attached the UpdateItems function to edit buttons
+
 
