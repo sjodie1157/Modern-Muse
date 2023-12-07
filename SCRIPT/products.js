@@ -119,8 +119,8 @@ function toggleSort() {
         console.error('Error on sort function', e.message)
     }
 }
-showItem()
 let srtbtn = document.querySelector('[data-sortBtn]').addEventListener('click', toggleSort)
+showItem()
 
 function filterItems() {
     try {
