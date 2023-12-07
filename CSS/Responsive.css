@@ -1,75 +1,120 @@
-@media screen and (300px<=width<720px) {
-
+@media screen and (width<=320px) {
     /* navbar */
-
-    #navbar a {
-        font-size: 28px;
-    }
-
-    /* main */
-
-    .sec-1 h1 {
-        font-size: 28px;
-        font-weight: 700;
-    }
-
-    .sec-1 p {
-        color: #FFF;
-        font-size: 16px;
-        font-weight: 300;
-        width: 75%;
-    }
-
-    .sec-2 h1 {
-        display: flex;
-        justify-content: start;
-        color: white;
-        font-size: 28px;
-    }
-
-    main :is(.sec-1) {
-        padding: 3rem 0 2rem 0;
-    }
-    
-    main :is(.sec-2) {
-        padding: 3rem 0 1rem 0;
-    }
-
-    .sec-1 h1 {
-        display: flex;
-        justify-content: start;
-    }
-
-    .box1 div p:nth-child(1) {
-        font-size: 10px;
-    }
-
-    .box1 div p{
-        font-size: 10px;
-    }
-
-    /* card */
-
-    img[alt="card"]{
+    img[alt="logo"] {
         width: 100px;
     }
 
-    .card {
-        margin: 0 .2rem 1rem 0;
-        width: fit-content;
+    #navbar a {
+        font-size: 25px;
     }
 
-    /* about page */
+    /* main Home*/
 
-    img[alt="aboutImg1"]{
-        width: 200px;
+    .sec-1 h1 {
+        font-size: 25px;
+        font-weight: 600;
     }
 
-    #main-about :is(p,h4) {
-        font-size: 20px;
+    .sec-1 p {
+        font-size: 15px;
+        font-weight: lighter;
+        display: flex;
+        justify-content: center;
     }
 
-    #main-about h1 {
-        font-size: 40px;
+    .sec-2 h1 {
+        color: white;
+        font-size: 25px;
+        font-weight: 600;
     }
+
+    /* cards in main */
+
+    img[alt="card"] {
+        width: 100%;
+        aspect-ratio: 1/1.3;
+    }
+
+    /* footer */
+
+    .box1 div p:nth-child(1) {
+        margin: 0;
+        font-size: 13px;
+    }
+
+    .box1 div p {
+        font-size: 8px;
+        text-align: center;
+    }
+
+}
+@media screen and (320px<width<=720px) {
+    /* navbar */
+    img[alt="logo"] {
+        width: 100px;
+    }
+
+    #navbar a {
+        font-size: 25px;
+    }
+
+    /* main Home*/
+
+    .sec-1 h1 {
+        font-size: 25px;
+        font-weight: 600;
+    }
+
+    .sec-1 p {
+        font-size: 15px;
+        font-weight: lighter;
+        display: flex;
+        justify-content: center;
+    }
+
+    .sec-2 h1 {
+        color: white;
+        font-size: 25px;
+        font-weight: 600;
+    }
+
+    /* cards in main */
+
+    img[alt="card"] {
+        width: 220px;
+        aspect-ratio: 1/1.3;
+    }
+
+    #cards .container{
+        max-width: fit-content;
+    }
+
+    #cards .col {
+        display: flex;
+        flex-flow: row;
+        flex-wrap: wrap;
+    }
+    /* footer */
+
+    .box1 div p:nth-child(1) {
+        margin: 0;
+        font-size: 13px;
+    }
+
+    .box1 div p {
+        font-size: 8px;
+        text-align: center;
+    }
+ 
+}
+@media screen and (720px<width<=1024px) {
+
+}
+
+@media screen and (1024px<width<=1366px) {
+
+}
+
+@media screen and (1366px<width<=1920px) {
+
 }
