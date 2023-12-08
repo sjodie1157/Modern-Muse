@@ -452,22 +452,25 @@ body {
 
 /* checkout page */
 
-
-
 #main-checkout {
+    min-height: 80vh;
     background-image: url(https://i.postimg.cc/m2yN0CZG/Dege-Skinner-Gentleman-s-Essentials.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-#main-checkout .container {
+#main-checkout .container-fluid {
     background-color: white;
     border-radius: 1pc;
-    margin: 2em;
+    margin: 1em;
     display: flex;
     justify-content: center;
     flex-direction: column;
+
 }
 
 #main-checkout h1 {
+    width: fit-content;
     color: #102C57;
     display: flex;
     margin: .3em;
@@ -479,6 +482,10 @@ body {
     display: flex;
     justify-content: center;
     color: #102C57;
+}
+
+#row{
+    width: fit-content;
 }
 
 table {
@@ -521,25 +528,27 @@ img[alt="check-Item"] {
 }
 
 .purchase-Button {
+    width: 80%;
     display: flex;
     align-items: center;
     justify-content: end;
     margin: 6em;
 }
 
+
 /* admin page */
 
-#main-admin .container:nth-child(2) {
+#main-admin .container-fluid:nth-child(2) {
     background-color: white;
     border-radius: 1pc;
 }
 
 #main-admin h1 {
+    width: 95%;
     color: #102C57;
     display: flex;
     margin: .3em;
     justify-content: center;
-    text-decoration: 3px underline overline;
     font-size: 75px;
 }
 
