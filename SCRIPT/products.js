@@ -7,42 +7,52 @@ if (localItems.length === 0) {
     localItems = [
         {
             id: 1,
-            name: "Black Mist",
+            name: "Mr Brown",
             category: "Suit",
-            colour: "Black",
-            price: 25000,
+            colour: "Brown",
+            price: 2500,
             designer: "Gucci",
-            imgLink: "https://i.postimg.cc/GhtDcywF/Black-Suit.jpg",
+            imgLink: "https://i.postimg.cc/RFWNwJpn/Buy-Men-Brown-Wedding-Suit-3-Piece-Formal-Fashion-Party-Wear-Online-in-India-Etsy.jpg",
             quantity: 1
         },
         {
             id: 2,
-            name: "Grey Matter",
-            category: "Tuxedo",
-            colour: "Grey",
-            price: 36070,
+            name: "Blue Blaze",
+            category: "Suit",
+            colour: "Blue",
+            price: 3607,
             designer: "Prada",
-            imgLink: "https://i.postimg.cc/0yHcksBQ/Grey-suit.jpg",
+            imgLink: "https://i.postimg.cc/76jb9Pjt/download.jpg",
             quantity: 1
         },
         {
             id: 3,
-            name: "Red Crimson",
+            name: "Gale chick",
             category: "Suit",
             colour: "Red",
-            price: 72000,
+            price: 7200,
             designer: "Gucci",
-            imgLink: "https://i.postimg.cc/Pq934jWc/red-suit.jpg",
+            imgLink: "https://i.postimg.cc/MpwMgTHh/Gale-Chic-Deep-Red-Peaked-Lapel-Double-Breasted-Striped-Business-Suits.jpg",
             quantity: 1
         },
         {
             id: 4,
-            name: "Envious",
+            name: "Kent Dark",
             category: "Suit",
-            colour: "Green",
-            price: 93000,
+            colour: "Grey",
+            price: 9300,
             designer: "Givenchy",
-            imgLink: "https://i.postimg.cc/0y5B5Z5t/Green-suit.jpg",
+            imgLink: "https://i.postimg.cc/RhfhD5BS/Kent-Dark-Green-3-Pieces-Peaked-Lapel-One-Button-Business-Suits.jpg",
+            quantity: 1
+        },
+        {
+            id: 5,
+            name: "Regan",
+            category: "Suit",
+            colour: "Black",
+            price: 9300,
+            designer: "Givenchy",
+            imgLink: "https://i.postimg.cc/T3cLx6Wh/Regan-Traditional-All-Black-Peaked-Lapel-Double-Breasted-Tailored-Business-Suits-For-Men.jpg",
             quantity: 1
         }
     ]
