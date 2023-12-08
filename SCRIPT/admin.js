@@ -49,7 +49,7 @@ aria-hidden="true">
 
 function showItem() {
     try {
-        let html;
+        let html
 
         if (listItems.length === 0) {
             html = `<div class="spinner-border text-primary" id="spinner" role="status">
@@ -76,27 +76,27 @@ function showItem() {
                                     <button type="button" data-item-id="${item.id}" onclick="removeItem(this)">Remove</button>
                                 </div>
                             </td>
-                        </tr>`;
+                        </tr>`
                 })
-                .join('');
+                .join('')
         }
-        addItemDisplayOnAdmin.innerHTML = html;
+        addItemDisplayOnAdmin.innerHTML = html
     } catch (e) {
-        console.error('Error on display function', e.message);
+        console.error('error on display function', e.message);
     }
 }
 
 function addItem() {
     try {
-        let name = document.querySelector('#name').value;
-        let category = document.querySelector('#category').value;
-        let colour = document.querySelector('#colour').value;
-        let price = +document.querySelector('#price').value;
-        let designer = document.querySelector('#designer').value;
-        let imgLink = document.querySelector('#imgLink').value;
+        let name = document.querySelector('#name').value
+        let category = document.querySelector('#category').value
+        let colour = document.querySelector('#colour').value
+        let price = +document.querySelector('#price').value
+        let designer = document.querySelector('#designer').value
+        let imgLink = document.querySelector('#imgLink').value
 
-        let oldItems = listItems || [];
-        let lastId = oldItems.reduce((max, item) => (item.id > max ? item.id : max), 0);
+        let oldItems = listItems || []
+        let lastId = oldItems.reduce((max, item) => (item.id > max ? item.id : max), 0)
 
         let newItem = {
             id: lastId + 1,
@@ -109,73 +109,72 @@ function addItem() {
         };
 
         let updatedItems = [...oldItems, newItem];
-        localStorage.setItem('items', JSON.stringify(updatedItems));
+        localStorage.setItem('items', JSON.stringify(updatedItems))
         listItems = updatedItems;
         showItem();
     } catch (e) {
-        console.error('Error on trying to create new items', e.message);
+        console.error('error on trying to create new items', e.message);
     }
 }
 
 function removeItem(button) {
     try {
         let itemId = button.dataset.itemId;
-        listItems = listItems.filter(item => item.id != itemId);
-        localStorage.setItem('items', JSON.stringify(listItems));
-        showItem();
+        listItems = listItems.filter(item => item.id != itemId)
+        localStorage.setItem('items', JSON.stringify(listItems))
+        showItem()
     } catch (e) {
-        console.error('Error on removing item', e.message);
+        console.error('error on removing item', e.message);
     }
 }
 
-let addItemButton = document.querySelector('[data-add-Item]');
+let addItemButton = document.querySelector('[data-add-Item]')
 addItemButton.addEventListener('click', addItem);
 
-let addItemDisplayOnAdmin = document.querySelector('[data-rowTable]');
+let addItemDisplayOnAdmin = document.querySelector('[data-rowTable]')
 
 function toggleSort() {
     try {
         if (ascendingOrder) {
-            listItems.sort((a, b) => a.price - b.price);
+            listItems.sort((a, b) => a.price - b.price)
         } else {
-            listItems.sort((a, b) => b.price - a.price);
+            listItems.sort((a, b) => b.price - a.price)
         }
 
-        ascendingOrder = !ascendingOrder;
-        localStorage.setItem('items', JSON.stringify(listItems));
-        showItem();
+        ascendingOrder = !ascendingOrder
+        localStorage.setItem('items', JSON.stringify(listItems))
+        showItem()
     } catch (e) {
-        console.error('Error on sort function', e.message);
+        console.error('error on sort function', e.message);
     }
 }
 
-let srtbtn = document.querySelector('[data-sortBtnAdmin]');
-srtbtn.addEventListener('click', toggleSort);
+let srtbtn = document.querySelector('[data-sortBtnAdmin]')
+srtbtn.addEventListener('click', toggleSort)
 
 showItem();
 
 function EditRecord(index) {
     try {
-        let itemCompare = listItems[index];
-        id = itemCompare.id;
-        document.querySelector('#name-edit').value = itemCompare.name;
-        document.querySelector('#category-edit').value = itemCompare.category;
-        document.querySelector('#colour-edit').value = itemCompare.colour;
-        document.querySelector('#price-edit').value = itemCompare.price;
-        document.querySelector('#designer-edit').value = itemCompare.designer;
-        document.querySelector('#imgLink-edit').value = itemCompare.imgLink;
-
-        ids = index;
+        let itemCompare = listItems[index]
+        id = itemCompare.id
+        document.querySelector('#name-edit').value = itemCompare.name
+        document.querySelector('#category-edit').value = itemCompare.category
+        document.querySelector('#colour-edit').value = itemCompare.colour
+        document.querySelector('#price-edit').value = itemCompare.price
+        document.querySelector('#designer-edit').value = itemCompare.designer
+        document.querySelector('#imgLink-edit').value = itemCompare.imgLink
+        ids = index
     } catch (e) {
-        console.error('Error on editRecord function', e.message);
+        console.error('error on editRecord function', e.message)
     }
 }
 
 function editAdd() {
     try {
         if (ids === -1) {
-            console.error('No item selected for editing.');
-            return;
+            console.error('No item selected for editing.')
+            return
         }
 
         let updatedItem = {
@@ -188,10 +187,10 @@ function editAdd() {
             imgLink: document.querySelector('#imgLink-edit').value
         };
 
-        listItems[ids] = updatedItem;
-        localStorage.setItem('items', JSON.stringify(listItems));
-        showItem();
+        listItems[ids] = updatedItem
+        localStorage.setItem('items', JSON.stringify(listItems))
+        showItem()
     } catch (e) {
-        console.error('Error on editAdd function', e.message);
+        console.error('error on editAdd function', e.message);
     }
 }
