@@ -85,3 +85,10 @@ function removeItem(event) {
         console.error('error removing item', e.message);
     }
 }
+
+function clearItems(){
+    localStorage.clear('purchased')
+    location.reload()
+}
+
+document.querySelector('[data-clear]').addEventListener('click',clearItems)
