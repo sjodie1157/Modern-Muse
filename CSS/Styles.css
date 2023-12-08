@@ -348,30 +348,25 @@ body {
 /* product */
 
 #main-product {
-    background-color: #DAC0A3;
-    padding: 0 0 2em 0;
+    background-image: url(https://i.postimg.cc/8CkF6YYx/Jeremy-Matos-Richard-Detwiler-for-Details-Magazine.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
+
 
 .prod-top {
     display: flex;
     justify-content: center;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 2rem 0;
     flex-flow: wrap;
+    align-items: center;
 }
 
-#prod-el span {
-    display: flex;
-    width: 100%;
-}
-
-#main-product .container:nth-child(2) {
-    width: fit-content;
-    background-color: #102C57;
-    border-radius: 2pc;
-}
 
 #main-product button {
+    height: 60px;
     width: fit-content;
     background-color: #102C57;
     border: none;
@@ -382,6 +377,7 @@ body {
 }
 
 #main-product button:hover {
+    height: 60px;
     width: fit-content;
     background-color: #102C57;
     border: none;
@@ -392,26 +388,17 @@ body {
 }
 
 #main-product input {
-    width: fit-content;
-    background-color: #102C57;
-    border: none;
-    border-radius: 1pc;
-    color: white;
-    transition: .2s;
-    font-size: 30px;
-}
-
-#main-product input:hover {
-    width: fit-content;
+    height: 75px;
     background-color: #102C57;
     border: none;
     border-radius: .5pc;
     color: white;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    font-size: 30px;
+    transition: .2s;
+    font-size: 25px;
 }
 
 #main-product input {
+    height: 60px;
     width: fit-content;
     background-color: #102C57;
     border: none;
@@ -421,10 +408,23 @@ body {
     font-size: 30px;
 }
 
+#main-product input:hover {
+    height: 60px;
+    width: fit-content;
+    background-color: #102C57;
+    border: none;
+    border-radius: .5pc;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    font-size: 30px;
+}
+
 #main-product h1 {
     border: none;
     color: #102C57;
     font-size: 75px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-weight: 700;
 }
 
 .sortbtn {
@@ -446,6 +446,14 @@ body {
     color: white;
 }
 
+#card-space {
+    gap: 3em;
+    margin: 0 0 7em 0;
+}
+
+#card-space p {
+    color: #102C57;
+}
 
 /* checkout page */
 
