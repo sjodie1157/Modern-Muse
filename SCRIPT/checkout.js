@@ -20,7 +20,7 @@ function purchasedItems() {
                     </tr>`
             }
         })
-// Added event listeners to all remove buttons
+        // Added event listeners to all remove buttons
         let removeBtns = document.querySelectorAll('.removeBtn')
         removeBtns.forEach(btn => {
             btn.addEventListener('click', removeItem)
@@ -54,12 +54,12 @@ function totalPrice() {
         let totalPrice = 0
 
         purchased.forEach(item => {
-            totalPrice += (item.price*100) * item.quantity
+            totalPrice += (item.price * 100) * item.quantity
         })
 
         total.innerHTML = `Total Price: R ${(totalPrice / 100).toFixed(2)}`
     } catch (e) {
-        console.error('Error on total price calculation', e.message);
+        console.error('error on total price calculation', e.message);
     }
 }
 
