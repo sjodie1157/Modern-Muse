@@ -608,7 +608,7 @@ img[alt="check-Item"] {
 
 .basis-big {
     display: flex;
-    flex-basis: 40%;
+    flex-basis: 47%;
 }
 
 .basis-big p,
@@ -622,14 +622,20 @@ a {
 }
 
 #main-contact {
-    background-image: linear-gradient(#DAC0A3, #102C57);
+    background-image: linear-gradient(white, #102C57);
     padding: 2em 0 15em 0;
+}
+
+#main-contact .container {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border: 3px solid #102C57;
 }
 
 .basis-big textarea,
 input {
     border: none;
-    background-color: #DAC0A3;
+    background-color: lightgray;
+    border-radius: .3pc;
     width: fit-content;
 }
 
@@ -638,7 +644,7 @@ input {
     background-color: #102C57;
     border: none;
     padding: .1em;
-    margin: 0 0 2em 2em;
+    margin: 0 0 2em 0;
     border-radius: .3pc;
     transition: .2s;
     font-size: 25px;
